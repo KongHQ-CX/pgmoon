@@ -1,8 +1,8 @@
-package = "pgmoon"
+package = "kong-pgmoon"
 version = "2.2.0.1-1"
 
 source = {
-  url = "git://github.com/Kong/pgmoon.git",
+  url = "git+https://github.com/Kong/pgmoon.git",
   tag = "2.2.0.1"
 }
 
