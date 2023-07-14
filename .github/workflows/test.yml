@@ -35,6 +35,7 @@ jobs:
         luarocks install https://raw.githubusercontent.com/leafo/lua-cjson/master/lua-cjson-dev-1.rockspec
         luarocks install luaossl
         luarocks install cqueues
+        luarocks install lua-resty-openssl
         [[ "${{ matrix.luaVersion }}" =~ ^5\.[12]$ ]] && luarocks install luabitop || true
 
     - name: build
