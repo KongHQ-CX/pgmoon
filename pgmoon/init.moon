@@ -404,10 +404,8 @@ class Postgres
             server_cert = @sock\getpeercertificate()
             server_cert\pem!, server_cert\getsignaturename!
 
-          signature = signature\lower!
-
           -- upgrade the signature if necessary (also handle the case of s/RSA-SHA1/sha256)
-          if signature\match("^md5") or signature\match("^sha1") or signature\match("sha1$")
+          if signature\match("^md5") or signature\match("^sha1") or signature\match("sha1$") or signature\match("sha256$")
             signature = "sha256"
           else
             objects = require "resty.openssl.objects"
